@@ -4,6 +4,7 @@ To get this application working, you will need the following software installed 
 1. NodeJS; NPM
 2. Postgres
 3. @angular/cli as a global dependency
+
 Once all the above noted software is installed, you need to:
 Add any needed records on your local Postgres Cluster->Database->table for a specific user;
 Clone this repository onto your local machine;
