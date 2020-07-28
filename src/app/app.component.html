@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">File Name</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let record of records">
+      <td>{{record.id}}</td>
+      <td>{{record.file_name}}</td>
+      <td>{{record.status}}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- <router-outlet></router-outlet> -->
