@@ -9,7 +9,6 @@ const pool = new Pool({
   password: 'bavagadu',
   port: 5432,
 });
-const delIds = [1,2,3,4,5,6,7,8];
 // const router = express.Router();
 function dataFetch () {
     return new Promise((res, rej) => {
@@ -52,15 +51,7 @@ function addFiles(req, res, next) {
         const values = [];
         newRecords.forEach(rec => {
             const date = new Date();
-            const year = date.getFullYear();
-            const month = date.getMonth() + 1;
-            const day = date.getDay();
-            const hours = date.getHours();
-            const minutes = date.getMinuites();
-            const seconds = date.getSeconds();
-            const milliseconds = date.getMilliseconds();
-            const lastModified = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds + '.' + milliseconds;
-            const itrVals = [rec.file_name, rec.file_size, lastModified, rec.status, rec.file_type];
+            const itrVals = [rec.file_name, rec.file_size, date, rec.status, rec.file_type];
             values.push(itrVals);
         });
         const addFilesQuery = queryFormat('INSERT INTO filesinfo (file_name, file_size, last_modified, status, file_type) VALUES %L', values);
@@ -81,9 +72,10 @@ function addFiles(req, res, next) {
 }
 function changeFile(req, res, next) {
     return new Promise((res, rej) => {
-        const id = parseInt(req.params.id)
-        const { file_name, status  } = req.body;
-        pool.query('UPDATE filesinfo SET file_name = $1, status = $2 WHERE id = $3', [file_name, status, id], (error, results) => {
+        const fname = req.params.fname;
+        const date = new Date();
+        const { status, fileSize, fileType } = req.body;
+        pool.query('UPDATE filesinfo SET status = $2, file_size = $3, last_modified = $4, file_type = $5 WHERE file_name = $1', [fname, status, fileSize, date, fileType], (error, results) => {
             if (error) {
               rej(error);
             } 
@@ -100,8 +92,8 @@ function changeFile(req, res, next) {
 }
 function deleteFile(req, res, next) {
     return new Promise((res, rej) => {
-        const id = parseInt(req.params.id)
-        pool.query('DELETE FROM filesinfo WHERE id = $1', [id], (error, results) => {
+        const fname = req.params.fname
+        pool.query('DELETE FROM filesinfo WHERE file_name = $1', [fname], (error, results) => {
             if (error) {
               rej(error);
             }
@@ -118,7 +110,7 @@ function deleteFile(req, res, next) {
 }
 function deleteFiles(req, res, next) {
     return new Promise((res, rej) => {
-        const ids = (req.body.delIds && req.body.delIds.length) ? req.body.delIds : delIds;
+        const ids = req.body.delIds;
         const delQuery = queryFormat('DELETE FROM filesinfo WHERE id IN %L', [ids]);
         pool.query(delQuery, (error, results) => {
             if (error) {
@@ -139,8 +131,8 @@ function deleteFiles(req, res, next) {
 router.get('/', getLandingData);
 router.post('/addFile', addFile);
 router.post('/addFiles', addFiles);
-router.put('/changeFile/:id', changeFile);
-router.delete('/deleteFile/:id', deleteFile);
+router.put('/changeFile/:fname', changeFile);
+router.delete('/deleteFile/:fname', deleteFile);
 router.post('/deleteFiles', deleteFiles);
 
 module.exports = router;
