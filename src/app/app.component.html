@@ -1,16 +1,90 @@
+<h1>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseFilters" role="button" aria-expanded="false" aria-controls="collapseFilters" style="margin: 2px;">
+  Filters
+  </a>
+</h1>
+<div class="collapse" id="collapseFilters">
+  <div class="card card-body" style="margin: 2px;">
+    <form [formGroup]="filters">
+      <div class="row">
+        <div class="form-group col-md-6">
+            <h5 class="card-title">Status</h5>
+            <div class="row">
+              <div class="col-md-1">
+                <label class="form-check-label" for="statY">Y</label>
+              </div>
+              <div class="col-md-11">
+                <input id="statN" type="checkbox" formControlName="StatY" (change)="filterChange()">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">
+                <label class="form-check-label" for="statN">N</label>
+              </div>
+              <div class="col-md-11">
+                <input id="statY" type="checkbox" formControlName="StatN" (change)="filterChange()">
+              </div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <h5 class="card-title">File Type</h5>
+            <div class="row">
+              <div class="col-md-3">                
+                <label class="form-check-label" for="clicks">Clicks</label>
+              </div>
+              <div class="col-md-9">                
+                <input id="clicks" type="checkbox" formControlName="Clicks" (change)="filterChange()"> 
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">                
+                <label class="form-check-label" for="impressions">Impressions</label>
+              </div>
+              <div class="col-md-9">                
+                <input id="impressions" type="checkbox" formControlName="Impressions" (change)="filterChange()">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">                
+                <label class="form-check-label" for="idMapping">ID Mapping</label>
+              </div>
+              <div class="col-md-9">                
+                <input id="idMapping" type="checkbox" formControlName="IdMapping" (change)="filterChange()">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">                
+                <label class="form-check-label" for="videoEvents">Video Events</label>
+              </div>
+              <div class="col-md-9">                
+                <input id="videoEvents" type="checkbox" formControlName="VideoEvents" (change)="filterChange()">
+              </div>
+            </div>  
+        </div>
+      </div>
+      <!-- <button type="submit" class="btn btn-warning btn-md ">Filter</button> -->
+    </form>
+  </div>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">File Name</th>
+      <th scope="col">File Size</th>
+      <th scope="col">Last Modified</th>
       <th scope="col">Status</th>
+      <th scope="col">File Type</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor= "let record of records">
+    <tr *ngFor= "let record of filteredRecords">
       <td>{{record.id}}</td>
       <td>{{record.file_name}}</td>
+      <td>{{record.file_size}}</td>
+      <td>{{record.last_modified}}</td>
       <td>{{record.status}}</td>
+      <td>{{record.file_type}}</td>
     </tr>
   </tbody>
 </table>

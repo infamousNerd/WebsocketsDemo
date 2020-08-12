@@ -1,0 +1,160 @@
+{
+    "addRecords": [
+        {
+            "file_name": "suchALongName",
+            "file_size": 791,
+            "status": "N",
+            "file_type": "clicks"
+        },
+        {
+            "file_name": "suchALongName1",
+            "file_size": 640,
+            "status": "N",
+            "file_type": "clicks"
+        },
+        {
+            "file_name": "suchALongName2",
+            "file_size": 730,
+            "status": "N",
+            "file_type": "clicks"
+        },
+        {
+            "file_name": "suchALongName3",
+            "file_size": 820,
+            "status": "N",
+            "file_type": "clicks"
+        },
+        {
+            "file_name": "suchALongName4",
+            "file_size": 531,
+            "status": "N",
+            "file_type": "clicks"
+        },
+        {
+            "file_name": "suchALongName5",
+            "file_size": 740,
+            "status": "N",
+            "file_type": "clicks"
+        },
+        {
+            "file_name": "suchALongName6",
+            "file_size": 595,
+            "status": "N",
+            "file_type": "clicks"
+        },
+        {
+            "file_name": "suchALongName7",
+            "file_size": 450,
+            "status": "N",
+            "file_type": "impressions"
+        },
+        {
+            "file_name": "suchALongName8",
+            "file_size": 290,
+            "status": "N",
+            "file_type": "impressions"
+        },
+        {
+            "file_name": "suchALongName9",
+            "file_size": 350,
+            "status": "N",
+            "file_type": "impressions"
+        },
+        {
+            "file_name": "suchALongName10",
+            "file_size": 430,
+            "status": "N",
+            "file_type": "impressions"
+        },
+        {
+            "file_name": "suchALongName11",
+            "file_size": 560,
+            "status": "N",
+            "file_type": "impressions"
+        },
+        {
+            "file_name": "suchALongName12",
+            "file_size": 350,
+            "status": "N",
+            "file_type": "impressions"
+        },
+        {
+            "file_name": "suchALongName13",
+            "file_size": 791,
+            "status": "Y",
+            "file_type": "idmapping"
+        },
+        {
+            "file_name": "suchALongName14",
+            "file_size": 640,
+            "status": "Y",
+            "file_type": "idmapping"
+        },
+        {
+            "file_name": "suchALongName15",
+            "file_size": 730,
+            "status": "Y",
+            "file_type": "idmapping"
+        },
+        {
+            "file_name": "suchALongName16",
+            "file_size": 820,
+            "status": "Y",
+            "file_type": "idmapping"
+        },
+        {
+            "file_name": "suchALongName17",
+            "file_size": 531,
+            "status": "Y",
+            "file_type": "idmapping"
+        },
+        {
+            "file_name": "suchALongName18",
+            "file_size": 740,
+            "status": "Y",
+            "file_type": "idmapping"
+        },
+        {
+            "file_name": "suchALongName19",
+            "file_size": 595,
+            "status": "Y",
+            "file_type": "videoevents"
+        },
+        {
+            "file_name": "suchALongName20",
+            "file_size": 450,
+            "status": "Y",
+            "file_type": "videoevents"
+        },
+        {
+            "file_name": "suchALongName21",
+            "file_size": 290,
+            "status": "Y",
+            "file_type": "videoevents"
+        },
+        {
+            "file_name": "suchALongName22",
+            "file_size": 350,
+            "status": "Y",
+            "file_type": "videoevents"
+        },
+        {
+            "file_name": "suchALongName23",
+            "file_size": 430,
+            "status": "Y",
+            "file_type": "videoevents"
+        },
+        {
+            "file_name": "suchALongName24",
+            "file_size": 560,
+            "status": "Y",
+            "file_type": "videoevents"
+        },
+        {
+            "file_name": "suchALongName25",
+            "file_size": 350,
+            "status": "Y",
+            "file_type": "videoevents"
+        }
+    ]
+}
